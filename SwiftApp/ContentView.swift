@@ -6,51 +6,60 @@
 //
 
 import SwiftUI
-import AVFoundation
 
 struct ContentView: View {
-    let synthesizer = AVSpeechSynthesizer()
-    
     var body: some View {
-        
-        VStack {
-            Button {
-                speak("Hello Programming")
-                
-            } label: {
-                Text("Hello World")
-                    .fontWeight(.bold)
-                    .font(.system(.title, design: .rounded))
+        VStack(spacing: 20) {
+            VStack {
+                Text("Instant Developer")
+                    .fontWeight(.medium)
+                    .font(.system(size: 40))
+                    .foregroundColor(.indigo)
+                Text("Get help from experts in 15 minutes")
             }
-            .padding()
-            .foregroundStyle(.white)
-            .background(.yellow)
-            .clipShape(RoundedRectangle(cornerRadius: 20))
             
-            Button {
-                speak("Hello Anna, How are you? Do you speak English?")
-                
-            } label: {
-                Text("Hello World")
-                    .fontWeight(.bold)
-                    .font(.system(.title, design: .rounded))
-            }
-            .padding()
-            .foregroundStyle(.white)
-            .background(.purple)
-            .clipShape(RoundedRectangle(cornerRadius: 20))
-        }
-    }
-    
-    func speak(_ text: String) {
-        let utterance = AVSpeechUtterance(string: text)
-        utterance.voice =
-        AVSpeechSynthesisVoice(language: "en-GB")
-        
-        synthesizer.speak(utterance)
+            HStack(alignment: .bottom, spacing: 10) {
+                Image("user1").resizable().scaledToFit()
+                Image("user2").resizable().scaledToFit()
+                Image("user3").resizable().scaledToFit()
+            }.padding(.horizontal, 20)
+            
+            Text("Need help with coding problems? Register!")
+            
+            Spacer()
+            
+            VSignUpButtonGroup()
+        }.padding(.top, 30)
     }
 }
 
 #Preview {
     ContentView()
+}
+
+struct VSignUpButtonGroup: View {
+    var body: some View {
+        VStack {
+            Button {
+            } label: {
+                Text("Sign Up")
+            }
+            .frame(width: 200)
+            .padding()
+            .foregroundColor(.white)
+            .background(Color.indigo)
+            .cornerRadius(10)
+            
+            
+            Button {
+            } label: {
+                Text("Log In")
+            }
+            .frame(width: 200)
+            .padding()
+            .foregroundColor(.white)
+            .background(Color.gray)
+            .cornerRadius(10)
+        }
+    }
 }

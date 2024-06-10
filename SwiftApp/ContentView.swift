@@ -16,17 +16,19 @@ struct ContentView: View {
                 Text("Instant Developer")
                     .fontWeight(.medium)
                     .font(.system(size: 40))
-                    .foregroundColor(.indigo)
+                    .foregroundColor(.white)
                 Text("Get help from experts in 15 minutes")
+                    .foregroundColor(.white)
             }
             
             HStack(alignment: .bottom, spacing: 10) {
-                Image("user1").resizable().scaledToFit()
-                Image("user2").resizable().scaledToFit()
-                Image("user3").resizable().scaledToFit()
-            }.padding(.horizontal, 20)
+                Image("student").resizable().scaledToFit()
+                Image("tutor").resizable().scaledToFit()
+            
+            }.padding(.horizontal, 50)
             
             Text("Need help with coding problems? Register!")
+                .foregroundColor(.white)
             
             Spacer()
             
@@ -35,7 +37,12 @@ struct ContentView: View {
             } else {
                 VSignUpButtonGroup()
             }
-        }.padding(.top, 30)
+        }.padding(.top, 10)
+            .background {
+                Image("background")
+                    .resizable()
+                    .ignoresSafeArea()
+            }
     }
 }
 

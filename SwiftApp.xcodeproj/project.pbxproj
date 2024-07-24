@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1305FCD82C0D3E09007CD5F6 /* SwiftAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1305FCD72C0D3E09007CD5F6 /* SwiftAppApp.swift */; };
+		1305FCD82C0D3E09007CD5F6 /* FoodPinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1305FCD72C0D3E09007CD5F6 /* FoodPinApp.swift */; };
 		1305FCDA2C0D3E09007CD5F6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1305FCD92C0D3E09007CD5F6 /* ContentView.swift */; };
 		1305FCDC2C0D3E0B007CD5F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1305FCDB2C0D3E0B007CD5F6 /* Assets.xcassets */; };
 		1305FCDF2C0D3E0B007CD5F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1305FCDE2C0D3E0B007CD5F6 /* Preview Assets.xcassets */; };
 		1305FCE92C0D3E0B007CD5F6 /* SwiftAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1305FCE82C0D3E0B007CD5F6 /* SwiftAppTests.swift */; };
 		1305FCF32C0D3E0B007CD5F6 /* SwiftAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1305FCF22C0D3E0B007CD5F6 /* SwiftAppUITests.swift */; };
 		1305FCF52C0D3E0B007CD5F6 /* SwiftAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1305FCF42C0D3E0B007CD5F6 /* SwiftAppUITestsLaunchTests.swift */; };
+		136CCE4D2C3241A200577990 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136CCE4C2C3241A200577990 /* ListView.swift */; };
+		13B148D12C50A1D70059BDF8 /* RestaurantListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B148D02C50A1D70059BDF8 /* RestaurantListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +37,7 @@
 
 /* Begin PBXFileReference section */
 		1305FCD42C0D3E09007CD5F6 /* SwiftApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1305FCD72C0D3E09007CD5F6 /* SwiftAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAppApp.swift; sourceTree = "<group>"; };
+		1305FCD72C0D3E09007CD5F6 /* FoodPinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPinApp.swift; sourceTree = "<group>"; };
 		1305FCD92C0D3E09007CD5F6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1305FCDB2C0D3E0B007CD5F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1305FCDE2C0D3E0B007CD5F6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -44,6 +46,8 @@
 		1305FCEE2C0D3E0B007CD5F6 /* SwiftAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1305FCF22C0D3E0B007CD5F6 /* SwiftAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAppUITests.swift; sourceTree = "<group>"; };
 		1305FCF42C0D3E0B007CD5F6 /* SwiftAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		136CCE4C2C3241A200577990 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		13B148D02C50A1D70059BDF8 /* RestaurantListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +98,9 @@
 		1305FCD62C0D3E09007CD5F6 /* SwiftApp */ = {
 			isa = PBXGroup;
 			children = (
-				1305FCD72C0D3E09007CD5F6 /* SwiftAppApp.swift */,
-				1305FCD92C0D3E09007CD5F6 /* ContentView.swift */,
+				13B148D22C50A2690059BDF8 /* Dump */,
+				1305FCD72C0D3E09007CD5F6 /* FoodPinApp.swift */,
+				13B148D02C50A1D70059BDF8 /* RestaurantListView.swift */,
 				1305FCDB2C0D3E0B007CD5F6 /* Assets.xcassets */,
 				1305FCDD2C0D3E0B007CD5F6 /* Preview Content */,
 			);
@@ -125,6 +130,15 @@
 				1305FCF42C0D3E0B007CD5F6 /* SwiftAppUITestsLaunchTests.swift */,
 			);
 			path = SwiftAppUITests;
+			sourceTree = "<group>";
+		};
+		13B148D22C50A2690059BDF8 /* Dump */ = {
+			isa = PBXGroup;
+			children = (
+				1305FCD92C0D3E09007CD5F6 /* ContentView.swift */,
+				136CCE4C2C3241A200577990 /* ListView.swift */,
+			);
+			path = Dump;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +272,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1305FCDA2C0D3E09007CD5F6 /* ContentView.swift in Sources */,
-				1305FCD82C0D3E09007CD5F6 /* SwiftAppApp.swift in Sources */,
+				1305FCD82C0D3E09007CD5F6 /* FoodPinApp.swift in Sources */,
+				136CCE4D2C3241A200577990 /* ListView.swift in Sources */,
+				13B148D12C50A1D70059BDF8 /* RestaurantListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +445,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,6 +474,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

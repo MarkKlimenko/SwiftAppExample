@@ -20,7 +20,14 @@ struct RestaurantListView: View {
     var body: some View {
         List {
             ForEach(0...restaurantNames.count - 1, id: \.self) { index in
-                FullImageRow(
+                //FullImageRow(
+                //    imageName: restaurantNames[index],
+                //    name: restaurantNames[index],
+                //    type: restaurantTypes[index],
+                //    location: restaurantLocations[index]
+                //)
+                
+                BasicTextImageRow(
                     imageName: restaurantNames[index],
                     name: restaurantNames[index],
                     type: restaurantTypes[index],
@@ -34,6 +41,10 @@ struct RestaurantListView: View {
 #Preview("Dark mode") {
     RestaurantListView()
         .preferredColorScheme(.dark)
+}
+
+#Preview("Light mode") {
+    RestaurantListView()
 }
 
 struct FullImageRow: View {
@@ -63,6 +74,35 @@ struct FullImageRow: View {
             }
             .padding(.horizontal)
             .padding(.bottom)
+        }
+    }
+}
+
+struct BasicTextImageRow: View {
+    var imageName: String
+    var name: String
+    var type: String
+    var location: String
+    
+    var body: some View {
+        HStack(spacing: 10) {
+            Image(imageName)
+                .resizable()
+                .scaledToFill()
+                .frame(width: 60, height: 60)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+        
+            VStack(alignment: .leading){
+                Text(name)
+                    .font(.system(.title2, design: .rounded))
+                
+                Text(type)
+                    .font(.system(.body, design: .rounded))
+                
+                Text(location)
+                    .font(.system(.subheadline, design: .rounded))
+                    .foregroundStyle(.gray)
+            }
         }
     }
 }

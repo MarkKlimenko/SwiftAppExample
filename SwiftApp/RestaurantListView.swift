@@ -17,22 +17,26 @@ struct RestaurantListView: View {
     
     var restaurantTypes = ["Coffee & Tea Shop", "Cafe", "TeaHouse", "Austrian/Causual Drink", "French", "Bakery", "Bakery", "Chocolate", "Cafe", "American/Seafood", "American", "American", "Breakfast & Brunch", "Coffee &Tea", "Coffee & Tea", "Latin American", "Spanish", "Spanish", "Spanish", "British", "Thai"]
     
+    @State var restaurantIsFavorites = Array(repeating: false, count: 21)
+    
     var body: some View {
         List {
             ForEach(0...restaurantNames.count - 1, id: \.self) { index in
-                //FullImageRow(
-                //    imageName: restaurantNames[index],
-                //    name: restaurantNames[index],
-                //    type: restaurantTypes[index],
-                //    location: restaurantLocations[index]
-                //)
-                
-                BasicTextImageRow(
+                FullImageRow(
                     imageName: restaurantNames[index],
                     name: restaurantNames[index],
                     type: restaurantTypes[index],
-                    location: restaurantLocations[index]
+                    location: restaurantLocations[index],
+                    isFavorite: $restaurantIsFavorites[index]
                 )
+                
+                //                BasicTextImageRow(
+                //                    imageName: restaurantNames[index],
+                //                    name: restaurantNames[index],
+                //                    type: restaurantTypes[index],
+                //                    location: restaurantLocations[index],
+                //                    isFavorite: $restaurantIsFavorites[index]
+                //                )
             }.listRowSeparator(.hidden)
         }.listStyle(.plain)
     }
@@ -47,11 +51,29 @@ struct RestaurantListView: View {
     RestaurantListView()
 }
 
+//#Preview("BasicTextImageRow", traits: .sizeThatFitsLayout) {
+//BasicTextImageRow(
+//    imageName: "cafedeadend", name: "Cafe Deadend",
+//    type: "Cafe", location: "Hong Kong",
+//    isFavorite: .constant(true))
+//}
+//
+//#Preview("FullImageRow", traits: .sizeThatFitsLayout) {
+//    FullImageRow(imageName: "cafedeadend", name: "Cafe Deadend",
+//                 type: "Cafe", location: "Hong Kong")
+//}
+
 struct FullImageRow: View {
     var imageName: String
     var name: String
     var type: String
     var location: String
+    @Binding var isFavorite: Bool
+    
+    @State private var showOptions = false
+    @State private var showError = false
+    
+    
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -60,20 +82,58 @@ struct FullImageRow: View {
                 .scaledToFill()
                 .frame(height: 200)
                 .clipShape(RoundedRectangle(cornerRadius: 20))
-        
-            VStack(alignment: .leading){
-                Text(name)
-                    .font(.system(.title2, design: .rounded))
+            
+            HStack {
+                VStack(alignment: .leading){
+                    Text(name)
+                        .font(.system(.title2, design: .rounded))
+                    
+                    Text(type)
+                        .font(.system(.body, design: .rounded))
+                    
+                    Text(location)
+                        .font(.system(.subheadline, design: .rounded))
+                        .foregroundStyle(.gray)
+                }
+                .padding(.horizontal)
+                .padding(.bottom)
                 
-                Text(type)
-                    .font(.system(.body, design: .rounded))
-                
-                Text(location)
-                    .font(.system(.subheadline, design: .rounded))
-                    .foregroundStyle(.gray)
+                if isFavorite {
+                    Spacer()
+                    Image(systemName: "star.fill")
+                        .foregroundStyle(.yellow)
+                }
             }
-            .padding(.horizontal)
-            .padding(.bottom)
+        }
+        .onTapGesture {
+            showOptions.toggle()
+        }.confirmationDialog(
+            "What do you want to do?",
+            isPresented: $showOptions,
+            titleVisibility: .visible
+        ) {
+            var favouriteMessage =
+            if(self.isFavorite == false) {
+                "Mark as favorite"
+            } else {
+                "Remove from favorites"
+            }
+            
+            Button("Reserve a table") {
+                showError.toggle()
+            }
+            Button(favouriteMessage) {
+                self.isFavorite.toggle()
+            }
+        }.alert(
+            "Not yet available",
+            isPresented: $showError
+        ) {
+            Button("OK") {
+                
+            }
+        } message: {
+            Text("Sorry, this feature is not available yet. Please retry later.")
         }
     }
 }
@@ -83,15 +143,19 @@ struct BasicTextImageRow: View {
     var name: String
     var type: String
     var location: String
+    @Binding var isFavorite: Bool
+    
+    @State private var showOptions = false
+    @State private var showError = false
     
     var body: some View {
-        HStack(spacing: 10) {
+        HStack(alignment: .top, spacing: 20) {
             Image(imageName)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 60, height: 60)
                 .clipShape(RoundedRectangle(cornerRadius: 20))
-        
+            
             VStack(alignment: .leading){
                 Text(name)
                     .font(.system(.title2, design: .rounded))
@@ -103,6 +167,42 @@ struct BasicTextImageRow: View {
                     .font(.system(.subheadline, design: .rounded))
                     .foregroundStyle(.gray)
             }
+            
+            if isFavorite {
+                Spacer()
+                Image(systemName: "star.fill")
+                    .foregroundStyle(.yellow)
+            }
+            
+        }.onTapGesture {
+            showOptions.toggle()
+        }.confirmationDialog(
+            "What do you want to do?",
+            isPresented: $showOptions,
+            titleVisibility: .visible
+        ) {
+            var favouriteMessage =
+            if(self.isFavorite == false) {
+                "Mark as favorite"
+            } else {
+                "Remove from favorites"
+            }
+            
+            Button("Reserve a table") {
+                showError.toggle()
+            }
+            Button(favouriteMessage) {
+                self.isFavorite.toggle()
+            }
+        }.alert(
+            "Not yet available",
+            isPresented: $showError
+        ) {
+            Button("OK") {
+                
+            }
+        } message: {
+            Text("Sorry, this feature is not available yet. Please retry later.")
         }
     }
 }

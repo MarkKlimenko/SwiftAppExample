@@ -43,36 +43,42 @@ struct RestaurantListView: View {
     @State var restaurantIsFavorites = Array(repeating: false, count: 21)
     
     var body: some View {
-        List {
-            ForEach(restaurants.indices, id: \.self) { index in
-                FullImageRow(
-                    restaurant: $restaurants[index]
-                ).swipeActions(edge: .leading, allowsFullSwipe: false) {
-                    Button {
-                    } label: {
-                        Image(systemName: "heart")
+        NavigationStack {
+            List {
+                ForEach(restaurants.indices, id: \.self) { index in
+                    FullImageRow(
+                        restaurant: $restaurants[index]
+                    ).swipeActions(edge: .leading, allowsFullSwipe: false) {
+                        Button {
+                        } label: {
+                            Image(systemName: "heart")
+                        }
+                        .tint(.green)
+                        Button {
+                        } label: {
+                            Image(systemName: "square.and.arrow.up")
+                        }
+                        .tint(.orange)
                     }
-                    .tint(.green)
-                    Button {
-                    } label: {
-                        Image(systemName: "square.and.arrow.up")
-                    }
-                    .tint(.orange)
+                    
+                    //                BasicTextImageRow(
+                    //                    imageName: restaurantNames[index],
+                    //                    name: restaurantNames[index],
+                    //                    type: restaurantTypes[index],
+                    //                    location: restaurantLocations[index],
+                    //                    isFavorite: $restaurantIsFavorites[index]
+                    //                )
                 }
-                
-                //                BasicTextImageRow(
-                //                    imageName: restaurantNames[index],
-                //                    name: restaurantNames[index],
-                //                    type: restaurantTypes[index],
-                //                    location: restaurantLocations[index],
-                //                    isFavorite: $restaurantIsFavorites[index]
-                //                )
+                .onDelete(perform: { indexSet in
+                    restaurants.remove(atOffsets: indexSet)
+                })
+                .listRowSeparator(.hidden)
             }
-            .onDelete(perform: { indexSet in
-                restaurants.remove(atOffsets: indexSet)
-            })
-            .listRowSeparator(.hidden)
-        }.listStyle(.plain)
+            .listStyle(.plain)
+            .navigationTitle("FoodPin")
+            .navigationBarTitleDisplayMode(.automatic)
+        
+        }
     }
 }
 

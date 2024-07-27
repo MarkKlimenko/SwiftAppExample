@@ -18,6 +18,7 @@
 		13B148D12C50A1D70059BDF8 /* RestaurantListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B148D02C50A1D70059BDF8 /* RestaurantListView.swift */; };
 		13D1C6F12C53158A003BD8AC /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D1C6F02C53158A003BD8AC /* Restaurant.swift */; };
 		13D8E1C32C5337A900E6ED3D /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D8E1C22C5337A900E6ED3D /* ActivityView.swift */; };
+		13D8E1C52C54505F00E6ED3D /* RestaurantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D8E1C42C54505F00E6ED3D /* RestaurantDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		13B148D02C50A1D70059BDF8 /* RestaurantListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListView.swift; sourceTree = "<group>"; };
 		13D1C6F02C53158A003BD8AC /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		13D8E1C22C5337A900E6ED3D /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		13D8E1C42C54505F00E6ED3D /* RestaurantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				13B148D02C50A1D70059BDF8 /* RestaurantListView.swift */,
+				13D8E1C42C54505F00E6ED3D /* RestaurantDetailView.swift */,
 				13D8E1C22C5337A900E6ED3D /* ActivityView.swift */,
 				13B148D22C50A2690059BDF8 /* Dump */,
 			);
@@ -294,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13D1C6F12C53158A003BD8AC /* Restaurant.swift in Sources */,
+				13D8E1C52C54505F00E6ED3D /* RestaurantDetailView.swift in Sources */,
 				1305FCDA2C0D3E09007CD5F6 /* ContentView.swift in Sources */,
 				1305FCD82C0D3E09007CD5F6 /* FoodPinApp.swift in Sources */,
 				136CCE4D2C3241A200577990 /* ListView.swift in Sources */,

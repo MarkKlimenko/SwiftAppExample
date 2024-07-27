@@ -46,20 +46,16 @@ struct RestaurantListView: View {
         NavigationStack {
             List {
                 ForEach(restaurants.indices, id: \.self) { index in
-                    FullImageRow(
-                        restaurant: $restaurants[index]
-                    ).swipeActions(edge: .leading, allowsFullSwipe: false) {
-                        Button {
-                        } label: {
-                            Image(systemName: "heart")
+                    
+                    ZStack(alignment: .leading) {
+                        NavigationLink(destination: RestaurantDetailView(restaurant: restaurants[index])) {
+                            EmptyView()
                         }
-                        .tint(.green)
-                        Button {
-                        } label: {
-                            Image(systemName: "square.and.arrow.up")
-                        }
-                        .tint(.orange)
+                        .opacity(0)
+                        
+                        FullImageRow(restaurant: $restaurants[index])
                     }
+       
                     
                     //                BasicTextImageRow(
                     //                    imageName: restaurantNames[index],
@@ -77,8 +73,8 @@ struct RestaurantListView: View {
             .listStyle(.plain)
             .navigationTitle("FoodPin")
             .navigationBarTitleDisplayMode(.automatic)
-        
-        }
+            
+        }.tint(.white)
     }
 }
 
@@ -209,6 +205,18 @@ struct FullImageRow: View {
             }
         } message: {
             Text("Sorry, this feature is not available yet. Please retry later.")
+        }
+        .swipeActions(edge: .leading, allowsFullSwipe: false) {
+            Button {
+            } label: {
+                Image(systemName: "heart")
+            }
+            .tint(.green)
+            Button {
+            } label: {
+                Image(systemName: "square.and.arrow.up")
+            }
+            .tint(.orange)
         }
     }
 }

@@ -10,10 +10,20 @@ import SwiftUI
 
 struct RestaurantListView: View {
     @State var restaurants = [
-        Restaurant(name: "Cafe Deadend", type: "Coffee & Tea Shop", location:
-                    "Hong Kong", image: "cafedeadend", isFavorite: false),
-        Restaurant(name: "Homei", type: "Cafe", location: "Hong Kong", image:
-                    "homei", isFavorite: true),
+        Restaurant(
+            name: "Cafe Deadend",
+            type: "Coffee & Tea Shop",
+            location:"Hong Kong",
+            image: "cafedeadend",
+            isFavorite: false
+        ),
+        Restaurant(
+            name: "Homei",
+            type: "Cafe",
+            location: "Hong Kong",
+            image: "homei",
+            isFavorite: true
+        ),
         Restaurant(name: "Teakha", type: "Tea House", location: "Hong Kong", image: "teakha", isFavorite: false),
         Restaurant(name: "Cafe loisl", type: "Austrian / Causual Drink", location: "Hong Kong", image: "cafeloisl", isFavorite: false),
         Restaurant(name: "Petite Oyster", type: "French", location: "Hong Kong"
@@ -71,7 +81,7 @@ struct RestaurantListView: View {
                 .listRowSeparator(.hidden)
             }
             .listStyle(.plain)
-            .navigationTitle("FoodPin")
+            //.navigationTitle("FoodPin")
             .navigationBarTitleDisplayMode(.automatic)
             
         }.tint(.white)

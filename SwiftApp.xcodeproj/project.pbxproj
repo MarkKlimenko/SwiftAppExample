@@ -16,9 +16,12 @@
 		1305FCF52C0D3E0B007CD5F6 /* SwiftAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1305FCF42C0D3E0B007CD5F6 /* SwiftAppUITestsLaunchTests.swift */; };
 		136CCE4D2C3241A200577990 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136CCE4C2C3241A200577990 /* ListView.swift */; };
 		13B148D12C50A1D70059BDF8 /* RestaurantListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B148D02C50A1D70059BDF8 /* RestaurantListView.swift */; };
+		13C5DC372C55DD5300336B46 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C5DC362C55DD5300336B46 /* MapView.swift */; };
 		13D1C6F12C53158A003BD8AC /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D1C6F02C53158A003BD8AC /* Restaurant.swift */; };
 		13D8E1C32C5337A900E6ED3D /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D8E1C22C5337A900E6ED3D /* ActivityView.swift */; };
 		13D8E1C52C54505F00E6ED3D /* RestaurantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D8E1C42C54505F00E6ED3D /* RestaurantDetailView.swift */; };
+		13D8E1CA2C54B0A700E6ED3D /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13D8E1C82C54B0A700E6ED3D /* Nunito-Regular.ttf */; };
+		13D8E1CB2C54B0A700E6ED3D /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13D8E1C92C54B0A700E6ED3D /* Nunito-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,9 +54,13 @@
 		1305FCF42C0D3E0B007CD5F6 /* SwiftAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		136CCE4C2C3241A200577990 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		13B148D02C50A1D70059BDF8 /* RestaurantListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListView.swift; sourceTree = "<group>"; };
+		13C5DC362C55DD5300336B46 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		13D1C6F02C53158A003BD8AC /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		13D8E1C22C5337A900E6ED3D /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		13D8E1C42C54505F00E6ED3D /* RestaurantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailView.swift; sourceTree = "<group>"; };
+		13D8E1C82C54B0A700E6ED3D /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Nunito-Regular.ttf"; path = "../../../../../../Downloads/Nunito/static/Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		13D8E1C92C54B0A700E6ED3D /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Nunito-Bold.ttf"; path = "../../../../../../Downloads/Nunito/static/Nunito-Bold.ttf"; sourceTree = "<group>"; };
+		13D8E1CC2C54B16C00E6ED3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +111,8 @@
 		1305FCD62C0D3E09007CD5F6 /* SwiftApp */ = {
 			isa = PBXGroup;
 			children = (
+				13D8E1CC2C54B16C00E6ED3D /* Info.plist */,
+				13D8E1C62C54AF6F00E6ED3D /* Resources */,
 				13D8E1C12C53245200E6ED3D /* Model */,
 				13D8E1C02C53242800E6ED3D /* View */,
 				1305FCD72C0D3E09007CD5F6 /* FoodPinApp.swift */,
@@ -154,6 +163,7 @@
 				13D8E1C42C54505F00E6ED3D /* RestaurantDetailView.swift */,
 				13D8E1C22C5337A900E6ED3D /* ActivityView.swift */,
 				13B148D22C50A2690059BDF8 /* Dump */,
+				13C5DC362C55DD5300336B46 /* MapView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -164,6 +174,23 @@
 				13D1C6F02C53158A003BD8AC /* Restaurant.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		13D8E1C62C54AF6F00E6ED3D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				13D8E1C72C54AF8A00E6ED3D /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		13D8E1C72C54AF8A00E6ED3D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				13D8E1C92C54B0A700E6ED3D /* Nunito-Bold.ttf */,
+				13D8E1C82C54B0A700E6ED3D /* Nunito-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,7 +297,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13D8E1CA2C54B0A700E6ED3D /* Nunito-Regular.ttf in Resources */,
 				1305FCDF2C0D3E0B007CD5F6 /* Preview Assets.xcassets in Resources */,
+				13D8E1CB2C54B0A700E6ED3D /* Nunito-Bold.ttf in Resources */,
 				1305FCDC2C0D3E0B007CD5F6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13D1C6F12C53158A003BD8AC /* Restaurant.swift in Sources */,
+				13C5DC372C55DD5300336B46 /* MapView.swift in Sources */,
 				13D8E1C52C54505F00E6ED3D /* RestaurantDetailView.swift in Sources */,
 				1305FCDA2C0D3E09007CD5F6 /* ContentView.swift in Sources */,
 				1305FCD82C0D3E09007CD5F6 /* FoodPinApp.swift in Sources */,
@@ -468,12 +498,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -497,12 +528,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

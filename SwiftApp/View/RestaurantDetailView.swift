@@ -11,6 +11,8 @@ import SwiftUI
 struct RestaurantDetailView: View {
     var restaurant: Restaurant
     
+    @State private var showReview = false
+    
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -36,19 +38,33 @@ struct RestaurantDetailView: View {
                                 .padding(.top, 40)
                         }
                         
-                        VStack(alignment: .leading, spacing: 5) {
-                            Text(restaurant.name)
-                                .font(.custom("Nunito-Regular", size: 35, relativeTo: .largeTitle)
-                                )
-                                .bold()
-                            Text(restaurant.type)
-                                .font(.system(.headline, design: .rounded))
-                                .padding(.all, 5)
-                                .background(Color.black)
+                        HStack(alignment: .bottom) {
+                            VStack(alignment: .leading, spacing: 5) {
+                                Text(restaurant.name)
+                                    .font(.custom("Nunito-Regular", size: 35, 
+                                                  relativeTo: .largeTitle))
+                                    .bold()
+                                Text(restaurant.type)
+                                    .font(.system(.headline, design: .rounded))
+                                    .padding(.all, 5)
+                                    .background(.black)
+                            }
+                            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0,
+                                   maxHeight: .infinity, alignment: .bottomLeading)
+                            .foregroundColor(.white)
+                            .padding()
+                            
+                            if let rating = restaurant.rating, !showReview {
+                                Image(rating.image)
+                                    .resizable()
+                                    .frame(width: 60, height: 60)
+                                    .padding([.bottom, .trailing])
+                                    .transition(.scale)
+                            }
                         }
-                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .bottomLeading)
-                        .foregroundStyle(.white)
-                        .padding()
+                        .animation(
+                            .spring(response: 0.2, dampingFraction: 0.3, blendDuration: 0.3), 
+                            value: restaurant.rating)
                     }
                 
                 Text(restaurant.description)
@@ -83,11 +99,26 @@ struct RestaurantDetailView: View {
                         .padding()
                 }
                 
+                Button {
+                    self.showReview.toggle()
+                } label: {
+                    Text("Rate it")
+                        .font(.system(.headline, design: .rounded))
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                }
+                .tint(Color("NavigationBarTitle"))
+                .buttonStyle(.borderedProminent)
+                .buttonBorderShape(.roundedRectangle(radius: 25))
+                .controlSize(.large)
+                .padding(.horizontal)
+                .padding(.bottom, 20)
+                
             }
         }
         .ignoresSafeArea()
-        //.navigationBarBackButtonHidden(true)
+        .navigationBarBackButtonHidden(true)
         .toolbarBackground(.hidden, for: .navigationBar)
+        .toolbar(self.showReview ? .hidden : .visible)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: {
@@ -99,7 +130,16 @@ struct RestaurantDetailView: View {
                 }
             }
         }
-    
+        .overlay(
+            self.showReview ?
+            ZStack {
+                ReviewView(
+                    restaurant: restaurant,
+                    isDisplayed: $showReview
+                )
+            }
+            : nil
+        )
     }
 }
 
